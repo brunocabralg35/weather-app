@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Bahianita&family=Patrick+Hand&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ABC270;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container h1 {
+  top: 0;
+  position: absolute;
+  margin-top: 8px;
+}
+
+.container .section1 {
+  width: 300px;
+  background-color: #FEC868;
+  height: 40vh;
+  border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 15px black;
+          box-shadow: 2px 2px 15px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .section1 .cidadeText {
+  font-size: 30px;
+  font-family: 'Bahianita', cursive;
+  letter-spacing: 1px;
+}
+
+.container .section1 .temperaturaText {
+  font-size: 100px;
+  font-family: 'Patrick Hand', cursive;
+}
+/*# sourceMappingURL=index.css.map */
