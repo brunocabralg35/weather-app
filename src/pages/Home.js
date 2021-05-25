@@ -1,31 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Lottie from "react-lottie";
 import animation from "../assets/animations/animation";
-
-const LoadingOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animation.loading,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
+import { WeatherContext } from "../components/WeatherContext";
+import { LoadingOptions, Rainy, Nublado, Thunder, Sunny, At_night } from "../assets/animations/Loadings";
 
 export default function Home() {
-  let url = "https://api.hgbrasil.com/weather?key=426890c0&user_ip=remote";
-
-  fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      setCidade(data.results.city);
-      setTemperatura(data.results.temp);
-    })
-    .catch((err) => console.log(err));
-
-  const [cidade, setCidade] = useState();
-  const [temperatura, setTemperatura] = useState();
+  const [clima] = useContext(WeatherContext);
 
   const [isReady, setIsReady] = useState(false);
 
@@ -35,12 +15,16 @@ export default function Home() {
     }, 5000);
   }, []);
 
+  var data = new Date();
+  var hora = data.getHours();
+
   return isReady ? (
     <div className="container">
       <h1>WeatherApp</h1>
       <div className="section1">
-        <p className="cidadeText">{cidade}</p>
-        <p className="temperaturaText">{temperatura} °C</p>
+      <Lottie options={(hora > 18) ? At_night :  Sunny } height={200} width={200} />
+        <p className="cidadeText">{clima.cidade}</p>
+        <p className="temperaturaText">{clima.temperatura} °C</p>
       </div>
     </div>
   ) : (
@@ -48,7 +32,7 @@ export default function Home() {
       <h1>WeatherApp</h1>
       <div className="section1">
         <div className="loadingBox">
-          <Lottie options={LoadingOptions} height={200} width={200} />
+          <Lottie options={LoadingOptions} height={250} width={250} />
         </div>
       </div>
     </div>
