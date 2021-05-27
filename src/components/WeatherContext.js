@@ -5,7 +5,7 @@ const api_key = process.env.REACT_APP_API_KEY;
 export const WeatherContext = createContext();
 
 export function WeatherProvider(props) {
-  let url = `https://api.hgbrasil.com/weather?key=${api_key}&city_name=Goiania,GO`;
+  let url = `https://api.hgbrasil.com/weather?key=${api_key}&city_name=Vancouver,BC`;
 
   useEffect(() => {
     fetch(url)

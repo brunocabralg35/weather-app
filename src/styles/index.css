@@ -52,6 +52,10 @@
           align-items: center;
 }
 
+.container .section1 .animationBox {
+  margin-bottom: 20px;
+}
+
 .container .section1 .cidadeText {
   font-size: 30px;
   font-family: 'Bahianita', cursive;
